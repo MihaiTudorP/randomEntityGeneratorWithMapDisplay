@@ -15,7 +15,7 @@ export class CustomMap {
         marker.setClickable(true);
         marker.addListener('click', ()=>{
            const infoWindow = new google.maps.InfoWindow({
-               content: 'Hi there'
+               content: mappable.summarize()
            });
            infoWindow.open(this.mapObject, marker);
         });

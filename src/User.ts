@@ -16,6 +16,6 @@ export class User{
     }
 
     summarize(): string {
-        return name;
+        return this.name;
     }
 }
