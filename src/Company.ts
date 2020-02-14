@@ -16,4 +16,8 @@ export class Company {
         }
     }
 
+    summarize(): string{
+        return `<p><b>${this.conpanyName}</b></p><p>${this.catchPhrase}</p>`
+    }
+
 }

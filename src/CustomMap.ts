@@ -11,6 +11,13 @@ export class CustomMap {
     }
 
     addMarker(mappable: Mappable): void {
-        const marker = new google.maps.Marker({map: this.mapObject, position: mappable.location});
+        const marker = new google.maps.Marker({map: this.mapObject, position: mappable.location, title: mappable.summarize()});
+        marker.setClickable(true);
+        marker.addListener('click', ()=>{
+           const infoWindow = new google.maps.InfoWindow({
+               content: 'Hi there'
+           });
+           infoWindow.open(this.mapObject, marker);
+        });
     }
 }
