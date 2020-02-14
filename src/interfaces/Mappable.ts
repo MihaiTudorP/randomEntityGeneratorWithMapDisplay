@@ -4,4 +4,5 @@ export interface Mappable{
         lng: number;
     }
     summarize():string;
+    color: string;
 }

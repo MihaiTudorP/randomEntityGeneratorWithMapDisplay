@@ -12,7 +12,7 @@ export class CustomMap {
 
     addMarker(mappable: Mappable): void {
         const marker = new google.maps.Marker({map: this.mapObject, position: mappable.location, title: mappable.summarize()});
-        marker.setClickable(true);
+        marker.setIcon( `http://maps.google.com/mapfiles/ms/icons/${mappable.color}-dot.png`);
         marker.addListener('click', ()=>{
            const infoWindow = new google.maps.InfoWindow({
                content: mappable.summarize()
